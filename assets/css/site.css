@@ -1,0 +1,347 @@
+/* global and Bootstrap overrides START */
+
+a:hover, a:focus, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a, i, span, h1, h2, h3, h4, li {
+    color: white;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* global and Bootstrap overrides END */
+
+.color-white {
+    color: #FFFFFF;
+}
+
+.color-bg-white {
+    background-color: #FFFFFF;
+}
+
+.color-white-darker {
+    color: #F5F5F5;
+}
+
+.color-bg-white-darker {
+    background-color: #F5F5F5;
+}
+
+.color-red {
+    color: #EB1C23;
+}
+
+.color-bg-red {
+    background-color: #EB1C23;
+}
+
+.color-red-2 {
+    color: #FD0009;
+}
+
+.color-bg-red-2 {
+    background-color: #FD0009;
+}
+
+.color-red-dark {
+    color: #4F0F1E;
+}
+
+.color-bg-red-dark {
+    background-color: #4F0F1E;
+}
+
+.color-black {
+    color: #232323;
+}
+
+.color-bg-black {
+    background-color: #232323;
+}
+
+.color-gray {
+    color: #626262;
+}
+
+.color-bg-gray {
+    background-color: #626262;
+}
+
+.color-gray-2 {
+    color: #C2C2C2;
+}
+
+.color-bg-gray-2 {
+    background-color: #C2C2C2;
+}
+
+.color-gray-3 {
+    color: #6D6D6D;
+}
+
+.color-bg-gray-3 {
+    background-color: #6D6D6D;
+}
+
+.color-orange {
+    color: #FF8300;
+}
+
+.color-bg-orange {
+    background-color: #FF8300;
+}
+
+.color-dark-blue {
+    color: #252C3D;
+}
+
+.color-bg-dark-blue {
+    background-color: #252C3D;
+}
+
+.color-dark-blue-2 {
+    color: #004C9E;
+}
+
+.color-bg-dark-blue-2 {
+    background-color: #004C9E;
+}
+
+.color-blue {
+    color: #0066D4;
+}
+
+.color-bg-blue {
+    background-color: #0066D4;
+}
+
+.color-green {
+    color: #73B80C;
+}
+
+.color-bg-green {
+    background-color: #73B80C;
+}
+
+.gradient-red {
+    background-color: #FF0009;
+    background-image: -moz-linear-gradient(-90deg, #930C12 0%, #FF0009 100%);
+    background-image: -o-linear-gradient(-90deg, #930C12 0%, #FF0009 100%);
+    background-image: -ms-linear-gradient(-90deg, #930C12 0%, #FF0009 100%);
+    background-image: -webkit-linear-gradient(-90deg, #930C12 0%, #FF0009 100%);
+    background-image: linear-gradient(-90deg, #930C12 0%, #FF0009 100%);
+}
+
+.default-width {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.no-text-select {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.flex-total-center {
+    overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-total-center-col {
+    overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-row-end {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+}
+
+.flex-end {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.flex-start {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.flex-baseline {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.font-114 {
+    font-size: 114px;
+}
+
+.font-94 {
+    font-size: 94px;
+}
+
+.font-74 {
+    font-size: 74px;
+}
+
+.font-62 {
+    font-size: 62px;
+}
+
+.font-54 {
+    font-size: 54px;
+}
+
+.font-44 {
+    font-size: 44px;
+}
+
+.font-42 {
+    font-size: 42px;
+}
+
+.font-38 {
+    font-size: 38px;
+}
+
+.font-36 {
+    font-size: 36px;
+}
+
+.font-34 {
+    font-size: 34px;
+}
+
+.font-32 {
+    font-size: 32px;
+}
+
+.font-30 {
+    font-size: 30px;
+}
+
+.font-28 {
+    font-size: 28px;
+}
+
+.font-26 {
+    font-size: 26px;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.font-22 {
+    font-size: 22px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-17 {
+    font-size: 17px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-10 {
+    font-size: 10px;
+}
+
+.font-regular {
+    font-family: "Roboto", sans-serif;
+}
+
+.font-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+}
+
+.font-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.font-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.font-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+}
+
+.italic {
+    font-style: italic;
+}
