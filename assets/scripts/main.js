@@ -44,7 +44,7 @@ jQuery(function () {
             // initMainNavigation();
 
             if (isSmallScreen) {
-                initTop10Slider();
+                // initTop10Slider();
                 initClickListeners(75);
                 initCalendarSliderMobile();
                 initOnScrollMenu(100);
@@ -54,7 +54,7 @@ jQuery(function () {
                 initTableSlider();
             } else if (isExtraSmallScreen) {
                 initOldAndroidSupport(335);
-                initTop10Slider();
+                // initTop10Slider();
                 initClickListeners(75);
                 initCalendarSliderMobile();
                 initOnScrollMenu(45);
@@ -62,6 +62,7 @@ jQuery(function () {
                 initMobileSubpageSliderFirst();
                 initMobileSubpageSliderSecond();
                 initTableSlider();
+                initTop10fix();
             } else {
                 initClickListeners(82);
                 initCalendarSlider();
@@ -561,6 +562,10 @@ jQuery(function () {
         //         thisItem.addClass("subpage-slider-down-active");
         //     }
         // });
+    }
+
+    function initTop10fix() {
+            jQuery('#mobile-slider-top-10').addClass('small-mobile');
     }
 
     function initOldAndroidSupport(value) {
