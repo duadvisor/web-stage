@@ -298,7 +298,7 @@ jQuery(function () {
 
         var disabled = false;
 
-        if(isExtraSmallScreen || isSmallScreen) {
+        if (isExtraSmallScreen || isSmallScreen) {
             disabled = true;
         }
 
@@ -326,48 +326,48 @@ jQuery(function () {
             draggie.setStep(step, 0);
         });
 
-    /*    jQuery(window).bind('mousewheel DOMMouseScroll', function (event) {
-            if (jQuery("#slider:hover").length) {
-                if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                    var step = parseInt(draggie.getStep()) - 1;
-                    draggie.setStep(step, 0);
+        /*    jQuery(window).bind('mousewheel DOMMouseScroll', function (event) {
+                if (jQuery("#slider:hover").length) {
+                    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                        var step = parseInt(draggie.getStep()) - 1;
+                        draggie.setStep(step, 0);
+                    }
+                    else {
+                        var step = parseInt(draggie.getStep()) + 1;
+                        draggie.setStep(step, 0);
+                    }
                 }
-                else {
-                    var step = parseInt(draggie.getStep()) + 1;
-                    draggie.setStep(step, 0);
-                }
-            }
-        });
-
-        jQuery("#slider").mouseenter(function () {
-            var jQuerybody = jQuery(document.body);
-            var oldWidth = jQuerybody.innerWidth();
-            jQuerybody.css("overflow", "hidden");
-            jQuerybody.width(oldWidth);
-            jQuery("header").width(oldWidth);
-        });
-
-        jQuery("#slider").mouseleave(function () {
-            var jQuerybody = jQuery(document.body);
-            jQuerybody.css("overflow", "auto");
-            jQuerybody.width("auto");
-            jQuery("header").width("100%");
-        });
-
-        jQuery("#slider").click(function () {
-            var jQuerybody = jQuery(document.body);
-            jQuerybody.css("overflow", "auto");
-            jQuerybody.width("auto");
-            jQuery("header").width("100%");
-        });*/
+            });
+    
+            jQuery("#slider").mouseenter(function () {
+                var jQuerybody = jQuery(document.body);
+                var oldWidth = jQuerybody.innerWidth();
+                jQuerybody.css("overflow", "hidden");
+                jQuerybody.width(oldWidth);
+                jQuery("header").width(oldWidth);
+            });
+    
+            jQuery("#slider").mouseleave(function () {
+                var jQuerybody = jQuery(document.body);
+                jQuerybody.css("overflow", "auto");
+                jQuerybody.width("auto");
+                jQuery("header").width("100%");
+            });
+    
+            jQuery("#slider").click(function () {
+                var jQuerybody = jQuery(document.body);
+                jQuerybody.css("overflow", "auto");
+                jQuerybody.width("auto");
+                jQuery("header").width("100%");
+            });*/
     }
 
-/*    window.cleanUpCalendarSlider = function () {
-        var jQuerybody = jQuery(document.body);
-        jQuerybody.css("overflow", "auto");
-        jQuerybody.width("auto");
-        jQuery("header").width("100%");
-    };*/
+    /*    window.cleanUpCalendarSlider = function () {
+            var jQuerybody = jQuery(document.body);
+            jQuerybody.css("overflow", "auto");
+            jQuerybody.width("auto");
+            jQuery("header").width("100%");
+        };*/
 
     function initCalendarSliderMobile() {
         var sliderItemContainWidth = jQuery(".slider-item").width();
@@ -418,7 +418,7 @@ jQuery(function () {
             }
         });
 
-        if(isExtraSmallScreen || isSmallScreen) {
+        if (isExtraSmallScreen || isSmallScreen) {
             disabled = false;
         }
 
@@ -472,48 +472,63 @@ jQuery(function () {
         var onScreenItemsCounter = 0;
         var stepNumber;
         var sliderWidth = jQuery("#slider-up").width();
+        var itemsLoaded = false;
 
-        jQuery(".slider-up-list-item").each(function () {
-            var itemWidth = jQuery(this).width() + 26;
-            sliderContainerWidth = sliderContainerWidth + itemWidth;
-            if (jQuery(this).isOnScreen()) {
-                onScreenItemsCounter++;
-            }
-        });
-
-        if (sliderContainerWidth > sliderWidth) {
-
-            jQuery("#slider-up").siblings(".fadeout-helper").show();
-
-            jQuery("#slider-up").children(".fadeout-switch").addClass("fadeout");
-            jQuery("#slider-up.slider-up-map").children(".fadeout-switch").addClass("fadeout-map");
-
-            var numberOfSliderItems = jQuery(".slider-up-list-item").length;
-            jQuery("#slider-up-container").css("width", sliderContainerWidth + "px");
-
-            stepNumber = numberOfSliderItems - onScreenItemsCounter;
-
-            var draggieSubpage1 = new Dragdealer("slider-up", {
-                steps: stepNumber,
-                speed: 0.3,
-                loose: false,
-                requestAnimationFrame: true
+        var i = setInterval(function () {
+            jQuery(".slider-up-list-item").each(function () {
+                if (jQuery(this).width() > 0) {
+                    itemsLoaded = true;
+                }
             });
-        }
 
-        // jQuery(".slider-up-list-item").click(function () {
-        //     var thisItem = jQuery(this);
-        //     if (thisItem.hasClass("list-item-all")) {
-        //         jQuery(".subpage-slider-up-active").removeClass("subpage-slider-up-active");
-        //     } else {
-        //         jQuery(".list-item-all").removeClass("subpage-slider-up-active");
-        //     }
-        //     if (thisItem.hasClass("subpage-slider-up-active")) {
-        //         thisItem.removeClass("subpage-slider-up-active");
-        //     } else {
-        //         thisItem.addClass("subpage-slider-up-active");
-        //     }
-        // });
+            if (itemsLoaded) {
+                clearInterval(i);
+
+                jQuery(".slider-up-list-item").each(function () {
+                    console.log(jQuery(this));
+                    console.log(jQuery(this).width());
+                    var itemWidth = jQuery(this).width() + 26;
+                    sliderContainerWidth = sliderContainerWidth + itemWidth;
+                    if (jQuery(this).isOnScreen()) {
+                        onScreenItemsCounter++;
+                    }
+                });
+
+                if (sliderContainerWidth > sliderWidth) {
+
+                    jQuery("#slider-up").siblings(".fadeout-helper").show();
+                    jQuery("#slider-up").children(".fadeout-switch").addClass("fadeout");
+                    jQuery("#slider-up.slider-up-map").children(".fadeout-switch").addClass("fadeout-map");
+
+                    var numberOfSliderItems = jQuery(".slider-up-list-item").length;
+
+                    jQuery("#slider-up-container").css("width", sliderContainerWidth + "px");
+
+                    stepNumber = numberOfSliderItems - onScreenItemsCounter;
+
+                    var draggieSubpage1 = new Dragdealer("slider-up", {
+                        steps: stepNumber,
+                        speed: 0.3,
+                        loose: false,
+                        requestAnimationFrame: true
+                    });
+                }
+
+                // jQuery(".slider-up-list-item").click(function () {
+                //     var thisItem = jQuery(this);
+                //     if (thisItem.hasClass("list-item-all")) {
+                //         jQuery(".subpage-slider-up-active").removeClass("subpage-slider-up-active");
+                //     } else {
+                //         jQuery(".list-item-all").removeClass("subpage-slider-up-active");
+                //     }
+                //     if (thisItem.hasClass("subpage-slider-up-active")) {
+                //         thisItem.removeClass("subpage-slider-up-active");
+                //     } else {
+                //         thisItem.addClass("subpage-slider-up-active");
+                //     }
+                // });
+            }
+        }, 200);
     }
 
     function initMobileSubpageSliderSecond() {
@@ -565,7 +580,7 @@ jQuery(function () {
     }
 
     function initTop10fix() {
-            jQuery('#mobile-slider-top-10').addClass('small-mobile');
+        jQuery('#mobile-slider-top-10').addClass('small-mobile');
     }
 
     function initOldAndroidSupport(value) {
